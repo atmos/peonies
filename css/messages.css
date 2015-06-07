@@ -1,0 +1,29 @@
+.messages {
+}
+
+.message .avatar {
+  float: left;
+  margin-left: -34px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.message .avatar img {
+  width: 24px;
+  height: 24px;
+}
+
+.message {
+  padding: 5px 10px;
+  padding-left: 44px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.message h4 {
+  margin: 0;
+  color: #000;
+}

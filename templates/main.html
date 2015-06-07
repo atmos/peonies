@@ -9,9 +9,15 @@
       require("coffee-script/register")
       require("../src/main")
     </script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/teams_sidebar.css">
+    <link rel="stylesheet" href="../css/messages.css">
   </head>
   <body>
-    <h2>Hey <script>document.write(process.env['USER'])</script>!</h2>
+    <h2 class="welcome">Hey <script>document.write(process.env['USER'])</script>!</h2>
     <div id="chat-app"></div>
+
+    <div id="fake-chat-app"></div>
   </body>
 </html>
