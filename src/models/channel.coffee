@@ -9,7 +9,7 @@ class Channel
 
     @messages = [ ]
 
-  name: () ->
+  teamName: () ->
     @team.name()
 
   userFor: (name) ->

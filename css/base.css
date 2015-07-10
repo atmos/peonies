@@ -1,3 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent elastic scrolling */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 16px;
@@ -9,24 +25,27 @@ body {
   display: none;
 }
 
-#input-bar {
-  position: absolute;
-  bottom: 0;
-  padding:10px;
-  width: 100%;
-  background-color: white;
-}
-
 .chat {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-#input-bar input {
-  width: 98%;
+.message-input-form {
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  width: 100%;
 }
-.text-input-area {
+
+.message-input {
+  border-radius: 2px;
+  border: 1px solid #dfdfdf;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: block;
+  font-size: 14px;
+  outline: none;
+  padding: 7px 10px;
   width: 100%;
 }
 

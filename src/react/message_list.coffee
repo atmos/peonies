@@ -1,19 +1,27 @@
+HEIGHT_OFFSET = 80 # Account for message input
+
 MessageList = React.createClass
   getInitialState: ->
     return { height: "400px" }
 
   updateDimensions: ->
-    @setState({width: ($(window).width()-20), height: ($(window).height()-70)})
+    @setState
+      width:  $(window).width(),
+      height: $(window).height() - HEIGHT_OFFSET
+
   componentWillMount: ->
     @updateDimensions()
+
   componentDidMount: ->
     window.addEventListener("resize", @updateDimensions)
+
   componentWillUnmount: ->
     window.removeEventListener("resize", @updateDimensions)
 
   componentWillUpdate: () ->
     if node = @getDOMNode()
-      @shouldScrollBottom = (node.scrollTop + node.offsetHeight) > node.scrollHeight-70
+      @shouldScrollBottom = (node.scrollTop + node.offsetHeight) > node.scrollHeight - HEIGHT_OFFSET
+
   componentDidUpdate: () ->
     if @shouldScrollBottom
       if node = @getDOMNode()

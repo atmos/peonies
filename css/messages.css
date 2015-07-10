@@ -1,7 +1,17 @@
 .messages {
   overflow-y: scroll;
   height: 500px;
-  border-bottom: 1px solid red;
+}
+
+.message {
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 14px;
+  padding: 5px 10px 5px 44px;
+}
+
+.message:last-child {
+  border-bottom: 0;
 }
 
 .message .avatar {
@@ -19,14 +29,6 @@
   height: auto;
   margin: 2px 5px 0 0;
   width: 16px;
-}
-
-.message {
-  padding: 5px 10px;
-  padding-left: 44px;
-  font-size: 14px;
-  color: #333;
-  border-bottom: 1px solid #eee;
 }
 
 .message h2, h3, h4 {

@@ -33,7 +33,6 @@ class App
 
       setTimeout ( =>
         connection.client.autoMark = true
-        React.render @reactElement, @document.getElementById("chat-app")
       ), 5000
 
 

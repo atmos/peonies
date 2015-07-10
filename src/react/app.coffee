@@ -1,6 +1,7 @@
 Config       = require "../config"
 ChannelList  = require "./channel_list"
 MessageList  = require "./message_list"
+InputElement = require "./input"
 
 AppElement = React.createClass
   getInitialState: ->
@@ -11,9 +12,9 @@ AppElement = React.createClass
       console.log "WARNING: Your config file #{tokenFile} is invalid"
 
     return {
-      channels: config.channels
-      activeChannel: config.channels[0].name
       messages: []
+      channels: config.channels
+      activeChannel: null
     }
 
   handleChangeChannel: (selectedChannel) ->
@@ -28,12 +29,20 @@ AppElement = React.createClass
 
             @setState({ activeChannel: selectedChannel, messages: channel.reactMessages() })
 
+  componentDidMount: ->
+    setTimeout ( =>
+      unless @state.activeChannel?
+        channelName = @props.parent.config.channels[0].name
+        @handleChangeChannel(channelName)
+    ), 3000
+
   render: ->
     <div className="chat">
       <div className="teams-sidebar"></div>
       <div className="team">
         <ChannelList channels={ @state.channels } active={ @state.activeChannel } onChange={ this.handleChangeChannel } />
         <MessageList messages={ @state.messages }, application={@} />
+        <InputElement application={@} />
       </div>
     </div>
 
